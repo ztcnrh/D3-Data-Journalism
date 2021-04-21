@@ -288,7 +288,7 @@ d3.csv("./assets/data/data.csv").then(function(censusData, err) {
         .attr("value", "healthcare")
         .attr("dy", "0.75em")
         .classed("y-label inactive aText", true)
-        .text("Lacks Healthcare (%)")
+        .text("Lacks Healthcare (%)");
 
     var smokesLabel = yLabelsGroup.append("text")
         .attr("transform", "rotate(-90)")
@@ -297,7 +297,7 @@ d3.csv("./assets/data/data.csv").then(function(censusData, err) {
         .attr("value", "smokes")
         .attr("dy", "0.75em")
         .classed("y-label inactive aText", true)
-        .text("Smokes (%)")
+        .text("Smokes (%)");
 
     var obeseLabel = yLabelsGroup.append("text")
         .attr("transform", "rotate(-90)")
@@ -306,16 +306,14 @@ d3.csv("./assets/data/data.csv").then(function(censusData, err) {
         .attr("value", "obesity")
         .attr("dy", "0.75em")
         .classed("y-label active aText", true)
-        .text("Obese (%)")
+        .text("Obese (%)");
 
     // Update tooltips with info from the new axes on the new circlesGroup using the created updateToolTip() function
     [textGroup, circlesGroup] = updateToolTip(chosenXAxis, chosenYAxis, textGroup, circlesGroup);
 
     // X-axis labels event listener
     xLabelsGroup.selectAll("text").on("click", function() {
-        // Get value of the selected x or y label
-        var xValue;
-        // var yValue;
+        // Get value of the selected x label
         var xValue = d3.select(this).attr("value");
         if (xValue !== chosenXAxis) {
 
@@ -381,9 +379,7 @@ d3.csv("./assets/data/data.csv").then(function(censusData, err) {
 
     // Y-axis labels event listener
     yLabelsGroup.selectAll("text").on("click", function() {
-        // Get value of the selected x or y label
-        var yValue;
-        // var yValue;
+        // Get value of the selected y label
         var yValue = d3.select(this).attr("value");
         if (yValue !== chosenYAxis) {
 

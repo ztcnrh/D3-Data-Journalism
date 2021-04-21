@@ -1,19 +1,27 @@
 .aText {
   font-family: sans-serif;
-  font-size: 16px;
+  font-size: 15px;
   text-anchor: middle;
+}
+
+.x-axis {
+  color: SlateGray;
+}
+
+.y-axis {
+  color: SlateGray;
 }
 
 .active {
   font-weight: bold;
-  fill: #000;
+  fill: SlateGray;
   transition: fill 0.3s ease-out;
   text-anchor: middle;
 }
 
 .inactive {
   font-weight: lighter;
-  fill: #c9c9c9;
+  fill: Silver;
   transition: fill 0.3s ease-out;
   text-anchor: middle;
 }
@@ -26,13 +34,18 @@
 /* font size dependent on radius, see app.js */
 .stateText {
   font-family: sans-serif;
-  fill: #fff;
+  /* fill: white; */
+  fill: black;
   text-anchor: middle;
+  font-size: 9px;
+  opacity: 0.8;
 }
 
 .stateCircle {
-  fill: #89bdd3;
-  stroke: #e3e3e3;
+  fill: SlateGray;
+  stroke: WhiteSmoke;
+  stroke-opacity: 0.3;
+  opacity: 0.7;
 }
 
 .chart {

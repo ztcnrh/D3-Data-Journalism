@@ -1,4 +1,4 @@
-# D3-Data-Journalism
+# D3-Data-Journalism :newspaper:
 
 Penn Data Boot Camp Assignment 16 - An interactive application using D3.js to explore a US Census Bureau dataset by visualizing correlations between demographic characteristics and health risk factors in the United States.
 
@@ -10,3 +10,8 @@ Below is a highlight of the visualization interactivity. View the deployed Githu
 <br>
 
 ![Demo of the interactive scatter plot](showcase_highlights/demo.gif)
+
+<br>
+
+*An example interpretation of the visualization:*
+1. *Looking at the percentage of state population in poverty vs. the percentage of population that are obese, there is a clear positive correlation between the two variables. In other words, a higher poverty rate correlates to a higher obecity rate. Poverty rate is likely a good indicator/predictor of a state's obecity rate and could potentially be a contributing factor of why a population is more likely to be obese.*

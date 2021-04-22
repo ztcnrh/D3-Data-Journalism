@@ -135,7 +135,7 @@ function updateToolTip(chosenXAxis, chosenYAxis, textGroup, circlesGroup) {
     if (chosenXAxis === "poverty") {
         var toolTip = d3.tip()
             .attr("class", "d3-tip")
-            .offset([50, 50])
+            .offset([85, 65])
             .html(function(d) {
                 return (
                     `${d.state}<br>
@@ -146,7 +146,7 @@ function updateToolTip(chosenXAxis, chosenYAxis, textGroup, circlesGroup) {
     else if (chosenXAxis === "income") {
         var toolTip = d3.tip()
             .attr("class", "d3-tip")
-            .offset([50, 50])
+            .offset([85, 65])
             .html(function(d) {
                 return (
                     `${d.state}<br>
@@ -157,7 +157,7 @@ function updateToolTip(chosenXAxis, chosenYAxis, textGroup, circlesGroup) {
     else {
         var toolTip = d3.tip()
             .attr("class", "d3-tip")
-            .offset([50, 50])
+            .offset([85, 65])
             .html(function(d) {
                 return (
                     `${d.state}<br>
@@ -172,8 +172,8 @@ function updateToolTip(chosenXAxis, chosenYAxis, textGroup, circlesGroup) {
     textGroup.on("mouseover", function(data) {
         toolTip.show(data);
     })
-    // onmouseout event
-    .on("mouseout", function(data, index) {
+    // on mouseout event
+        .on("mouseout", function(data, index) {
         toolTip.hide(data);
     });
 
@@ -183,8 +183,8 @@ function updateToolTip(chosenXAxis, chosenYAxis, textGroup, circlesGroup) {
     circlesGroup.on("mouseover", function(data) {
         toolTip.show(data);
     })
-    // onmouseout event
-    .on("mouseout", function(data, index) {
+    // on mouseout event
+        .on("mouseout", function(data, index) {
         toolTip.hide(data);
     });
 
@@ -195,7 +195,8 @@ function updateToolTip(chosenXAxis, chosenYAxis, textGroup, circlesGroup) {
 // Retrieve data from the CSV file and execute everything below
 d3.csv("./assets/data/data.csv").then(function(censusData, err) {
     if (err) throw err;
-    console.log(censusData); // delete later...
+    // For developers... visualizing data...
+    console.log(censusData);
 
     // Parse data and turn strings into numbers
     censusData.forEach((data) => {
@@ -239,7 +240,7 @@ d3.csv("./assets/data/data.csv").then(function(censusData, err) {
         .classed("stateCircle", true);
     
     // Append initial text for the circles
-    var textGroup = chartGroup.selectAll("text")
+    var textGroup = chartGroup.selectAll("div")
         .data(censusData)
         .enter()
         .append("text")
@@ -444,4 +445,3 @@ d3.csv("./assets/data/data.csv").then(function(censusData, err) {
 }).catch(function(error) {
   console.log(error);
 });
-

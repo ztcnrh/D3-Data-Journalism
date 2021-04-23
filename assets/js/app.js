@@ -36,6 +36,8 @@ function xScale(censusData, chosenXAxis) {
     ])
     .range([0, width]);
 
+    xLinearScale.nice();
+
     return xLinearScale;
 }
 
@@ -48,6 +50,8 @@ function yScale(censusData, chosenYAxis) {
         d3.max(censusData, d => d[chosenYAxis]) * 1.15
     ])
     .range([height, 0]);
+
+    yLinearScale.nice();
 
     return yLinearScale;
 }
